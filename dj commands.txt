@@ -1,0 +1,22 @@
+To create virtual env in django w python3
+# virtualenv <directoryname> -p python3
+
+To activate virtual env
+# source bin/activate
+
+To deactivate
+#deactivate
+
+To install Django
+#pip install django==1.10.2
+
+To upgrade version at any point in time
+#pip install django==1.10.3
+
+PIP Python Package Installer
+
+* start migrations
+# python manage.py makemigrations
+
+* make a migrate
+#python manage.py migrate
