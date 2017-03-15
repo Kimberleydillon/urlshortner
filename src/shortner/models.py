@@ -10,8 +10,10 @@ class UrlAppManager(models.Manager):
         qs = qs_main.filter(active=True)
         return qs
 
-    def refresh_shortcodes(self):
+    def refresh_shortcodes(self, items=None):
         qs = UrlApp.objects.filter(id__gte=1)
+        if items is not None and isinstance(items, int):
+            qs = qs.order_by('-id')[:items] #reverses query set by reverse order of ids
         new_codes = 0
         for q in qs:
             q.shortcode = create_shortcode(q)
@@ -35,6 +37,7 @@ class UrlApp (models.Model):
         if self.shortcode is None or self.shortcode == "":
             self.shortcode = create_shortcode(self)
         super(UrlApp, self).save(*args, **kwargs)
+
 
     def __str__(self):
         return str(self.url)
