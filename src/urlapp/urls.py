@@ -1,3 +1,4 @@
+
 """urlapp URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -16,6 +17,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from shortner.views import urlapp_redirect_view, UrlCBView
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^view-1/$', urlapp_redirect_view),
+    url(r'^view-2/$', UrlCBView.as_view()),
+
 ]
