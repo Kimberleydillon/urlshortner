@@ -1,8 +1,11 @@
+from django.conf import settings
 from django.db import models
 
 # Create your models here.
 
 from .utils import code_generator, create_shortcode
+
+SHORTCODE_MAX = getattr(settings, "SHORTCODE_MAX", 15)
 
 class UrlAppManager(models.Manager):
     def all(self, *args, **kwargs):
@@ -24,12 +27,12 @@ class UrlAppManager(models.Manager):
 
 
 class UrlApp (models.Model):
-    url         = models.CharField(max_length=220, )
-    shortcode   = models.CharField(max_length=15, unique=True, blank=True)# in database this creates whole new column.
-    updated     = models.DateTimeField(auto_now=True) #everytime model is saved time value is set
-    timestamp   = models.DateTimeField(auto_now_add=True) #when model was created
-    active      = models.BooleanField(default=True)
-    objects     = UrlAppManager()
+    url = models.CharField(max_length=220, )
+    shortcode = models.CharField(max_length=SHORTCODE_MAX, unique=True, blank=True)# in database this creates whole new column.
+    updated = models.DateTimeField(auto_now=True) #everytime model is saved time value is set
+    timestamp = models.DateTimeField(auto_now_add=True) #when model was created
+    active = models.BooleanField(default=True)
+    objects = UrlAppManager()
     some_random = UrlAppManager()
 
 

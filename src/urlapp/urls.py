@@ -21,7 +21,7 @@ from shortner.views import urlapp_redirect_view, UrlCBView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^view-1/$', urlapp_redirect_view),
-    url(r'^view-2/$', UrlCBView.as_view()),
+    url(r'^a/(?P<shortcode>[\w-]+)/$', urlapp_redirect_view),
+    url(r'^b/(?P<shortcode>[\w-]+)/$', UrlCBView.as_view()),
 
 ]
