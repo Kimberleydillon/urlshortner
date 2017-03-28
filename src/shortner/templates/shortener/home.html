@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous"
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Tangerine:400,700|Great+Vibes|Playfair+Display+SC:400,900,700' rel='stylesheet'type='text/css'>
+</head>
+
+<body>
+<div class="nav">
+    <div class="container">
+<ul class="nav nav-pills pull-left">
+  <li role="presentation" class="active"><a href="index.html">Home</a></li>
+</ul>
+
+
+     </div>
+   </div>
+   <div class="jumbotron">
+{#       <img src=http://storage-cube.quebecormedia.com/v1/cl_prod/canadian_living/a4270591-3fff-42d3-bd9b-e171dc93f7d4/classic-whipped-shortbread1461339267.jpg">#}
+     <div class= "container" style="'width: 800px; margin:0 auto;" >
+      <h1> Snazzy Url </h1>
+      <strong><p> Use these shortened urls and enjoy more room on your tweets for your thoughts!</p></strong>
+         <form method='POST' action='.'> {% csrf_token %}
+            <input name='url' type='text' placeholder='Shorten your URL here! ie: http://www.mmmmshortbreadcookies.com'/>
+            <input type='submit' value='Shorten'/>
+         </form>
+    </div>
+  </div>
+
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+</body>
+</html>
