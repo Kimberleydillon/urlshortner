@@ -7,6 +7,7 @@ from .utils import code_generator, create_shortcode
 
 SHORTCODE_MAX = getattr(settings, "SHORTCODE_MAX", 15)
 
+
 class UrlAppManager(models.Manager):
     def all(self, *args, **kwargs):
         qs_main = super(UrlAppManager, self).all(*args, **kwargs)
@@ -35,12 +36,10 @@ class UrlApp (models.Model):
     objects = UrlAppManager()
     some_random = UrlAppManager()
 
-
     def save(self, *args, **kwargs): #overrides save method
         if self.shortcode is None or self.shortcode == "":
             self.shortcode = create_shortcode(self)
         super(UrlApp, self).save(*args, **kwargs)
-
 
     def __str__(self):
         return str(self.url)
